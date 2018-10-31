@@ -1,14 +1,16 @@
 <component name="libraryTable">
   <library name="fontawesomefx-8.9-javadoc">
     <CLASSES>
-      <root url="jar://D:/java jarlar/fontawesomefx-8.9.jar!/" />
-      <root url="jar://D:/java jarlar/jfoenix-8.0.7.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/javaFx/fontawesomefx-8.9.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/javaFx/java-json.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/javaFx/jfoenix-8.0.7.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://D:/java jarlar/fontawesomefx-8.9-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/javaFx/fontawesomefx-8.9-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://D:/java jarlar/fontawesomefx-8.9-sources.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/javaFx/fontawesomefx-8.9-sources.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/javaFx/java-json.jar!/" />
     </SOURCES>
   </library>
 </component>
