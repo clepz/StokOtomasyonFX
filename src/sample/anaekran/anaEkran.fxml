@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="900.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="BOTTOM_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="596.0" prefWidth="1300.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="574.0" prefWidth="1300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="501.0" prefWidth="900.0">
+                           <children>
+                              <JFXTextField labelFloat="true" promptText="Barkod">
+                                 <VBox.margin>
+                                    <Insets left="225.0" right="225.0" top="20.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField labelFloat="true" layoutX="235.0" layoutY="10.0" promptText="Marka">
+                                 <VBox.margin>
+                                    <Insets left="225.0" right="225.0" top="40.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField labelFloat="true" layoutX="235.0" layoutY="10.0" promptText="Model">
+                                 <VBox.margin>
+                                    <Insets left="225.0" right="225.0" top="40.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField labelFloat="true" layoutX="235.0" layoutY="10.0" prefHeight="31.0" prefWidth="101.0" promptText="Ürün Açıklama">
+                                 <VBox.margin>
+                                    <Insets left="225.0" right="225.0" top="40.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField labelFloat="true" promptText="Ürün Açıklama">
+                                 <VBox.margin>
+                                    <Insets left="225.0" right="225.0" top="40.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField labelFloat="true" promptText="Ürün Açıklama">
+                                 <VBox.margin>
+                                    <Insets left="225.0" right="225.0" top="40.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField labelFloat="true" promptText="Ürün Açıklama">
+                                 <VBox.margin>
+                                    <Insets left="225.0" right="225.0" top="40.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField labelFloat="true" promptText="Ürün Açıklama">
+                                 <VBox.margin>
+                                    <Insets left="225.0" right="225.0" top="40.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXButton prefHeight="36.0" prefWidth="89.0" text="EKLE">
+                                 <VBox.margin>
+                                    <Insets left="550.0" top="10.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="501.0" prefWidth="900.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="650.0">
+                                 <children>
+                                    <JFXTextField labelFloat="true" prefHeight="31.0" prefWidth="236.0" promptText="TC">
+                                       <HBox.margin>
+                                          <Insets left="225.0" right="75.0" />
+                                       </HBox.margin>
+                                    </JFXTextField>
+                                    <JFXComboBox labelFloat="true" prefHeight="31.0" prefWidth="137.0" promptText="Cinsiyet">
+                                       <HBox.margin>
+                                          <Insets left="50.0" right="25.0" />
+                                       </HBox.margin>
+                                    </JFXComboBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <JFXTextField labelFloat="true" promptText="Ad">
+                                 <VBox.margin>
+                                    <Insets left="225.0" right="225.0" top="40.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField labelFloat="true" promptText="Soyad">
+                                 <VBox.margin>
+                                    <Insets left="225.0" right="225.0" top="40.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField labelFloat="true" promptText="Adres">
+                                 <VBox.margin>
+                                    <Insets left="225.0" right="225.0" top="40.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField labelFloat="true" promptText="Ürün Açıklama">
+                                 <VBox.margin>
+                                    <Insets left="225.0" right="225.0" top="40.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField labelFloat="true" promptText="Ürün Açıklama">
+                                 <VBox.margin>
+                                    <Insets left="225.0" right="225.0" top="40.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField labelFloat="true" promptText="Ürün Açıklama">
+                                 <VBox.margin>
+                                    <Insets left="225.0" right="225.0" top="40.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <JFXTreeTableView maxHeight="1.7976931348623157E308" prefHeight="308.0" prefWidth="1300.0">
+               <columns>
+                  <TreeTableColumn editable="false" maxWidth="300.0" prefWidth="200.0" text="Barkod" />
+                  <TreeTableColumn editable="false" maxWidth="300.0" prefWidth="200.0" text="Ürün Açıklama" />
+                  <TreeTableColumn editable="false" maxWidth="300.0" prefWidth="200.0" text="Miktar" />
+                  <TreeTableColumn editable="false" maxWidth="300.0" prefWidth="200.0" text="Bölümü" />
+                  <TreeTableColumn editable="false" maxWidth="300.0" prefWidth="200.0" text="Fiyatı" />
+                  <TreeTableColumn editable="false" maxWidth="300.0" prefWidth="167.0" text="Seri No" />
+                  <TreeTableColumn editable="false" maxWidth="200.0" prefWidth="150.0" text="İşlem" />
+               </columns>
+            </JFXTreeTableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

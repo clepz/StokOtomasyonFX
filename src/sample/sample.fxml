@@ -10,9 +10,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox alignment="CENTER" layoutX="-5.0" layoutY="1.0" prefHeight="463.0" prefWidth="391.0" style="-fx-background-color: #003530;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="CENTER" layoutX="-5.0" layoutY="1.0" prefHeight="463.0" prefWidth="391.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <FontAwesomeIconView fill="#1fa86a" size="60" wrappingWidth="60.0">
+            <FontAwesomeIconView fill="#1fa86a" glyphName="STORE" size="60" wrappingWidth="60.0">
                <VBox.margin>
                   <Insets bottom="30.0" />
                </VBox.margin>
@@ -37,7 +37,7 @@
                   </FontAwesomeIconView>
                </children>
             </HBox>
-            <JFXButton textFill="#e80101" />
+            <JFXButton text="Giriş Yap" textFill="#e80101" />
          </children>
       </VBox>
    </children>
