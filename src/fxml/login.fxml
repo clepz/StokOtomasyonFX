@@ -3,14 +3,20 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="553.0" prefWidth="448.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="anaAnchor" fx:id="anaAnchor" prefHeight="473.0" prefWidth="448.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.Login">
    <children>
+      <Pane id="suruklePane" fx:id="suruklePane" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="45.0" prefWidth="448.0">
+         <children>
+            <FontAwesomeIconView fx:id="close" glyphName="CLOSE" layoutX="428.0" layoutY="18.0" onMouseClicked="#closeClicked" size="20" />
+         </children></Pane>
       <AnchorPane layoutY="42.0" prefHeight="45.0" prefWidth="448.0" style="-fx-background-color: #252540;">
          <children>
             <ImageView fitHeight="28.0" fitWidth="29.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
@@ -18,7 +24,7 @@
                   <Image url="@../icons/Box_48px_1.png" />
                </image>
             </ImageView>
-            <Label layoutX="53.0" layoutY="12.0" prefHeight="21.0" prefWidth="101.0" text="YARAK TARIK" textFill="WHITE">
+            <Label layoutX="53.0" layoutY="12.0" prefHeight="21.0" prefWidth="101.0" text="STOK TAKİP" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -27,24 +33,24 @@
       </AnchorPane>
       <ImageView fitHeight="107.0" fitWidth="148.0" layoutX="171.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../icons/stok%20avatar%201.png" />
+            <Image url="@../icons/stok_avatar1.png" />
          </image>
       </ImageView>
-      <JFXTextField focusColor="#252540" labelFloat="true" layoutX="127.0" layoutY="225.0" prefHeight="38.0" prefWidth="256.0" promptText="Kullanıcı Adı" unFocusColor="BLACK">
+      <JFXTextField fx:id="username" focusColor="#252540" labelFloat="true" layoutX="127.0" layoutY="225.0" prefHeight="38.0" prefWidth="256.0" promptText="Kullanıcı Adı" unFocusColor="BLACK">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField focusColor="#252540" labelFloat="true" layoutX="127.0" layoutY="315.0" prefHeight="38.0" prefWidth="256.0" promptText="Parola" unFocusColor="BLACK">
+      <JFXPasswordField fx:id="password" focusColor="#252540" labelFloat="true" layoutX="127.0" layoutY="315.0" prefHeight="38.0" prefWidth="256.0" promptText="Parola" unFocusColor="BLACK">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXPasswordField>
-      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="345.0" layoutY="381.0" prefHeight="38.0" prefWidth="38.0">
+      <JFXButton fx:id="anaEkranGiris" contentDisplay="GRAPHIC_ONLY" layoutX="345.0" layoutY="381.0" onMouseClicked="#anaEkranGirisClicked" prefHeight="38.0" prefWidth="38.0">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icons/Login%20Rounded%20Right_50px.png" />
+                  <Image url="@../icons/Login_Rounded_Right_50px.png" />
                </image>
             </ImageView>
          </graphic>
@@ -64,5 +70,6 @@
             <Image url="@../icons/Password_48px.png" />
          </image>
       </ImageView>
+      <Label fx:id="mesaj" layoutX="133.0" layoutY="161.0" textFill="#dd0303" />
    </children>
 </AnchorPane>
