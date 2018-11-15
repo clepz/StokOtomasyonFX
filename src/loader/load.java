@@ -22,7 +22,7 @@ public class load {
         stage.setScene(scene);
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
-
+/*
 
         root.setOnMousePressed(new EventHandler<MouseEvent>(){
             @Override
@@ -40,7 +40,7 @@ public class load {
                 stage.setY(event.getScreenY()- yOffset);
             }
         });
-
+*/
     }
 
 

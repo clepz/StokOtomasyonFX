@@ -1,4 +1,4 @@
 package fxml;
 
-public class KullaniciIslemleriEkran {
+public class KullaniciIslemleri {
 }
