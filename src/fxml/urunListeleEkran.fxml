@@ -1,14 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.UrunListeleEkran"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="656.0" prefWidth="933.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.UrunListeleEkran">
+   <children>
+      <Pane prefHeight="74.0" prefWidth="933.0" style="-fx-background-color: #d4d4d4;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" layoutY="3.0" prefHeight="74.0" prefWidth="142.0">
+               <children>
+                  <ImageView fitHeight="49.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/List_96px.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label text="Ürün Listesi" textFill="#6f6f6f">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <TextField fx:id="TextfieldBarkodListe" layoutX="160.0" layoutY="28.0" prefHeight="27.0" prefWidth="190.0" style="-fx-background-radius: 10;" />
+            <Label layoutX="169.0" layoutY="6.0" prefHeight="17.0" prefWidth="98.0" text="Barkod" textFill="#757575">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="382.0" layoutY="6.0" prefHeight="17.0" prefWidth="91.0" text="Bölüm No" textFill="#757575">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <SplitMenuButton layoutX="378.0" layoutY="28.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="190.0" text="Bölüm No">
+              <items>
+                <MenuItem mnemonicParsing="false" text="1" />
+                <MenuItem mnemonicParsing="false" text="2" />
+                  <MenuItem mnemonicParsing="false" text="3" />
+                  <MenuItem mnemonicParsing="false" text="4" />
+                  <MenuItem mnemonicParsing="false" text="5" />
+                  <MenuItem mnemonicParsing="false" text="6" />
+                  <MenuItem mnemonicParsing="false" text="7" />
+                  <MenuItem mnemonicParsing="false" text="8" />
+                  <MenuItem mnemonicParsing="false" text="9" />
+                  <MenuItem mnemonicParsing="false" text="10" />
+              </items>
+            </SplitMenuButton>
+         </children>
+      </Pane>
+      <TableView layoutY="74.0" prefHeight="588.0" prefWidth="1004.0">
+        <columns>
+          <TableColumn prefWidth="108.0" text="Barkod" />
+          <TableColumn prefWidth="93.0" text="Marka" />
+            <TableColumn prefWidth="81.0" text="Model" />
+            <TableColumn prefWidth="82.0" text="Açıklama" />
+            <TableColumn prefWidth="63.0" text="Seri no" />
+            <TableColumn prefWidth="72.0" text="Fiyat" />
+            <TableColumn prefWidth="76.0" text="Bundle" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>

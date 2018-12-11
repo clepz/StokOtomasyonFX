@@ -1,14 +1,323 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.UrunEkleEkran"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="656.0" prefWidth="933.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.UrunEkleEkran">
+   <children>
+      <Pane prefHeight="27.0" prefWidth="933.0" style="-fx-background-color: #d4d4d4;">
+         <children>
+            <HBox layoutY="-3.0" prefHeight="33.0" prefWidth="142.0">
+               <children>
+                  <ImageView fitHeight="21.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="5.0" top="6.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../icons/Barcode_96px.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Ürün Ekle" textFill="#6f6f6f">
+                     <HBox.margin>
+                        <Insets left="4.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <VBox layoutX="104.0" layoutY="76.0" prefHeight="425.0" prefWidth="749.0">
+         <children>
+            <HBox prefHeight="94.0" prefWidth="749.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="94.0" prefWidth="375.0">
+                     <children>
+                        <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../icons/Barcode_96px.png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefHeight="94.0" prefWidth="280.0">
+                           <HBox.margin>
+                              <Insets left="5.0" top="8.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="270.0" text="Barkod">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="6.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="TextfieldBarkod" prefHeight="33.0" prefWidth="264.0" style="-fx-background-radius: 15;">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="94.0" prefWidth="375.0">
+                     <children>
+                        <ImageView fitHeight="65.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../icons/Bag Brand_64px.png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefHeight="94.0" prefWidth="280.0">
+                           <HBox.margin>
+                              <Insets left="5.0" top="8.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="270.0" text="Marka">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="6.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="TextfieldMarka" prefHeight="33.0" prefWidth="264.0" style="-fx-background-radius: 15;">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="94.0" prefWidth="749.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="94.0" prefWidth="375.0">
+                     <children>
+                        <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../icons/Dodecahedron_50px.png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefHeight="94.0" prefWidth="280.0">
+                           <HBox.margin>
+                              <Insets left="5.0" top="8.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="270.0" text="Model">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="6.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="TextfieldModel" prefHeight="33.0" prefWidth="264.0" style="-fx-background-radius: 15;">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="94.0" prefWidth="375.0">
+                     <children>
+                        <ImageView fitHeight="58.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../icons/Text Color_48px.png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefHeight="94.0" prefWidth="280.0">
+                           <HBox.margin>
+                              <Insets left="5.0" top="8.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="270.0" text="Açıklama">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="6.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="TextfieldAciklama" prefHeight="33.0" prefWidth="264.0" style="-fx-background-radius: 15;">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="94.0" prefWidth="749.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="94.0" prefWidth="375.0">
+                     <children>
+                        <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../icons/Counter_50px_1.png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefHeight="94.0" prefWidth="280.0">
+                           <HBox.margin>
+                              <Insets left="5.0" top="8.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="270.0" text="Seri No">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="6.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="TextfieldSeriNo" prefHeight="33.0" prefWidth="264.0" style="-fx-background-radius: 15;">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="94.0" prefWidth="375.0">
+                     <children>
+                        <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../icons/Price Tag_52px.png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefHeight="94.0" prefWidth="280.0">
+                           <HBox.margin>
+                              <Insets left="5.0" top="8.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="270.0" text="Fiyat">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="6.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="TextfieldFiyat" prefHeight="33.0" prefWidth="264.0" style="-fx-background-radius: 15;">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="94.0" prefWidth="749.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="94.0" prefWidth="375.0">
+                     <children>
+                        <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../icons/11_50px.png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefHeight="94.0" prefWidth="280.0">
+                           <HBox.margin>
+                              <Insets left="5.0" top="8.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="270.0" text="Bölüm No">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="6.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="TextfieldBolumNo" prefHeight="33.0" prefWidth="264.0" style="-fx-background-radius: 15;">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="94.0" prefWidth="375.0">
+                     <children>
+                        <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../icons/Rope_52px.png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefHeight="94.0" prefWidth="280.0">
+                           <HBox.margin>
+                              <Insets left="5.0" top="8.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="270.0" text="Bundle">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="6.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="TextfieldBundle" prefHeight="33.0" prefWidth="264.0" style="-fx-background-radius: 15;">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <JFXButton fx:id="ButtonKaydet" onAction="#kaydetAction" prefHeight="52.0" prefWidth="749.0" style="-fx-background-color: gray; -fx-background-radius: 20;" text="Kaydet" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>

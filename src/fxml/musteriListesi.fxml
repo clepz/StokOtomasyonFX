@@ -1,14 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.MusteriListesi"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="656.0" prefWidth="933.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.MusteriListesi">
+   <children>
+      <Pane prefHeight="41.0" prefWidth="933.0" style="-fx-background-color: #d4d4d4;">
+         <children>
+            <HBox layoutY="3.0" prefHeight="33.0" prefWidth="124.0">
+               <children>
+                  <ImageView fitHeight="21.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="5.0" top="6.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../icons/Restaurant Table_100px_1.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Müşteri Listesi" textFill="#6f6f6f">
+                     <HBox.margin>
+                        <Insets left="4.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <TextField layoutX="124.0" layoutY="8.0" prefHeight="21.0" prefWidth="197.0" promptText="TC" />
+            <JFXButton layoutX="321.0" layoutY="8.0" prefHeight="25.0" prefWidth="51.0" style="-fx-background-color: gray;" text="Ara" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <TableView layoutY="41.0" prefHeight="625.0" prefWidth="933.0">
+        <columns>
+          <TableColumn prefWidth="105.0" text="TC" />
+            <TableColumn prefWidth="105.0" text="AD" />
+            <TableColumn prefWidth="105.0" text="SOYAD" />
+            <TableColumn prefWidth="160.0" text="ADRES" />
+            <TableColumn prefWidth="107.0" text="CİNSİYET" />
+            <TableColumn prefWidth="122.0" text="TELEFON" />
+            <TableColumn prefWidth="93.0" text="EV_TELEFON" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>

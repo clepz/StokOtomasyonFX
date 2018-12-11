@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.AnalizEkran"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="656.0" prefWidth="933.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.AnalizEkran">
+   <children>
+      <Pane layoutY="-2.0" prefHeight="74.0" prefWidth="933.0" style="-fx-background-color: #d4d4d4;">
+         <children>
+            <HBox alignment="CENTER_LEFT" layoutY="3.0" prefHeight="74.0" prefWidth="142.0">
+               <children>
+                  <ImageView fitHeight="49.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Pie Chart_96px_1.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label text="Satış Analiz" textFill="#6f6f6f">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <TextField layoutX="142.0" layoutY="28.0" prefHeight="27.0" prefWidth="190.0" style="-fx-background-radius: 10;" />
+            <Label layoutX="148.0" layoutY="6.0" prefHeight="17.0" prefWidth="98.0" text="Kullanıcı Adı" textFill="#757575">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <TextField layoutX="354.0" layoutY="28.0" prefHeight="27.0" prefWidth="190.0" style="-fx-background-radius: 10;" />
+            <Label layoutX="361.0" layoutY="6.0" prefHeight="17.0" prefWidth="98.0" text="Müşteri Tc" textFill="#757575">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TableView layoutX="7.0" layoutY="79.0" prefHeight="587.0" prefWidth="933.0">
+        <columns>
+          <TableColumn prefWidth="101.0" text="Kullanıcı Adı" />
+          <TableColumn prefWidth="63.0" text="Yetki" />
+            <TableColumn prefWidth="78.0" text="Ciro" />
+            <TableColumn prefWidth="102.0" text="Müşteri" />
+            <TableColumn prefWidth="401.0" text="Ürün Bilgisi" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>

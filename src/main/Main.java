@@ -5,12 +5,15 @@ import loader.load;
 
 import java.io.IOException;
 
+
 public class Main extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) throws IOException {
         load l=new load();
-        l.loader("/fxml/login.fxml");
+
+            l.loader("/fxml/login.fxml");
+
 
     }
 

@@ -1,14 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.KullaniciIslemleri"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="656.0" prefWidth="933.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.KullaniciIslemleri">
+   <children>
+      <Pane layoutY="-2.0" prefHeight="30.0" prefWidth="933.0" style="-fx-background-color: #d4d4d4;">
+         <children>
+            <HBox layoutY="-3.0" prefHeight="33.0" prefWidth="142.0">
+               <children>
+                  <ImageView fitHeight="21.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="5.0" top="7.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../icons/User Male_104px.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Kullanıcı İşlemleri" textFill="#6f6f6f">
+                     <HBox.margin>
+                        <Insets left="4.0" top="12.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <TextField fx:id="TextFieldKullaniciadi" layoutX="314.0" layoutY="151.0" prefHeight="30.0" prefWidth="306.0" />
+      <Label layoutX="314.0" layoutY="122.0" prefHeight="21.0" prefWidth="107.0" text="Kullanıcı Adı" />
+      <TextField fx:id="TextFieldSifre" layoutX="314.0" layoutY="229.0" prefHeight="30.0" prefWidth="306.0" />
+      <Label layoutX="314.0" layoutY="200.0" prefHeight="21.0" prefWidth="107.0" text="Şifre" />
+      <TextField fx:id="TextFieldKullaniciID" layoutX="314.0" layoutY="304.0" prefHeight="30.0" prefWidth="142.0" />
+      <Label layoutX="314.0" layoutY="275.0" prefHeight="21.0" prefWidth="107.0" text=" Kullanıcı ID" />
+      <Label layoutX="467.0" layoutY="275.0" prefHeight="21.0" prefWidth="84.0" text="Yetki" />
+      <ComboBox fx:id="ComboBoxYetki" layoutX="467.0" layoutY="304.0" prefHeight="30.0" prefWidth="150.0" promptText="Satıcı" />
+      <HBox layoutX="314.0" layoutY="355.0" prefHeight="43.0" prefWidth="306.0">
+         <children>
+            <JFXButton prefHeight="43.0" prefWidth="96.0" style="-fx-background-color: gray; -fx-background-radius: 10;" text="Ekle" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton prefHeight="43.0" prefWidth="96.0" style="-fx-background-color: gray; -fx-background-radius: 10;" text="Güncelle" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton prefHeight="43.0" prefWidth="96.0" style="-fx-background-color: gray; -fx-background-radius: 10;" text="Sil" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
 </AnchorPane>
