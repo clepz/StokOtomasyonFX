@@ -19,7 +19,7 @@ public class HttpRequests {
         URL url = null;
         HttpURLConnection con = null;
         try {
-            url = new URL("http://localhost:8080" + link);
+            url = new URL("http://localhost:8081" + link);
             con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod(httpMetodu);
         } catch (IOException e) {
