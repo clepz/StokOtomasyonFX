@@ -81,7 +81,7 @@
                               <Insets left="20.0" />
                            </HBox.margin>
                            <image>
-                              <Image url="@../icons/Bag Brand_64px.png" />
+                              <Image url="@../icons/bag.png" />
                            </image>
                         </ImageView>
                         <VBox prefHeight="94.0" prefWidth="280.0">
@@ -149,7 +149,7 @@
                               <Insets left="20.0" />
                            </HBox.margin>
                            <image>
-                              <Image url="@../icons/Text Color_48px.png" />
+                              <Image url="@../icons/text.png" />
                            </image>
                         </ImageView>
                         <VBox prefHeight="94.0" prefWidth="280.0">
@@ -217,7 +217,7 @@
                               <Insets left="20.0" />
                            </HBox.margin>
                            <image>
-                              <Image url="@../icons/Price Tag_52px.png" />
+                              <Image url="@../icons/price.png" />
                            </image>
                         </ImageView>
                         <VBox prefHeight="94.0" prefWidth="280.0">

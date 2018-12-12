@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="681.0" prefWidth="1123.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.AnaSayfaEkran">
    <children>
       <Pane prefHeight="26.0" prefWidth="763.0" style="-fx-background-color: #d4d4d4;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -49,7 +48,7 @@
                            <graphic>
                               <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../icons/Land Sales_96px.png" />
+                                    <Image url="@../icons/sale.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -65,7 +64,7 @@
                            <graphic>
                               <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../icons/Pie Chart_96px_1.png" />
+                                    <Image url="@../icons/pie.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -113,7 +112,7 @@
                            <graphic>
                               <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../icons/Restaurant Table_100px_1.png" />
+                                    <Image url="@../icons/musteri.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -129,7 +128,7 @@
                            <graphic>
                               <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../icons/User Male_104px.png" />
+                                    <Image url="@../icons/usermale.png" />
                                  </image>
                               </ImageView>
                            </graphic>

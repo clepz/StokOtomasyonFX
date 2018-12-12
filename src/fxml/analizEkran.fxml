@@ -20,7 +20,7 @@
                <children>
                   <ImageView fitHeight="49.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Pie Chart_96px_1.png" />
+                        <Image url="@../icons/pie.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" />
