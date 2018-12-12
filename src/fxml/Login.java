@@ -61,7 +61,7 @@ public class Login {
         load anaEkran = new load();
         try {
             System.out.println(user.getRol());
-            anaEkran.loader("/fxml/anaEkran.fxml");
+            anaEkran.loader("/fxml/anaSayfaEkran.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }
