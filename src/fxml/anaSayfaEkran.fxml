@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
@@ -12,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="681.0" prefWidth="1123.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.AnaSayfaEkran">
+<AnchorPane fx:id="anaSayfaAnchor" prefHeight="681.0" prefWidth="1123.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.AnaSayfaEkran">
    <children>
       <Pane prefHeight="26.0" prefWidth="763.0" style="-fx-background-color: #d4d4d4;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -36,6 +38,7 @@
                   </Label>
                </children>
             </HBox>
+            <FontAwesomeIconView fx:id="butonKapat" fill="#6b6b6b" glyphName="CLOSE" layoutX="1105.0" layoutY="17.0" onMouseClicked="#kapatMouseClicked" wrappingWidth="6.000000983476639" />
          </children>
       </Pane>
       <AnchorPane layoutY="26.0" prefHeight="656.0" prefWidth="190.0">
@@ -138,8 +141,25 @@
                         </JFXButton>
                      </children>
                   </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="190.0">
+                     <children>
+                        <JFXButton fx:id="butonKasaIslemleri" alignment="BASELINE_LEFT" graphicTextGap="25.0" onAction="#butonKasaIslemleriAction" prefHeight="54.0" prefWidth="192.0" text="Kasa İşlemleri" textFill="#686868">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/price.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
+            <Button fx:id="butonCikis" layoutX="-2.0" layoutY="630.0" mnemonicParsing="false" onAction="#butonCikisAction" prefHeight="25.0" prefWidth="190.0" text="Çıkış" />
          </children>
       </AnchorPane>
       <Separator layoutX="187.0" layoutY="26.0" orientation="VERTICAL" prefHeight="656.0" prefWidth="5.0" />

@@ -45,7 +45,7 @@
       <TextField fx:id="textFieldKullaniciID" layoutX="314.0" layoutY="304.0" prefHeight="30.0" prefWidth="142.0" />
       <Label layoutX="314.0" layoutY="275.0" prefHeight="21.0" prefWidth="107.0" text=" Kullanıcı ID" />
       <Label layoutX="467.0" layoutY="275.0" prefHeight="21.0" prefWidth="84.0" text="Yetki" />
-      <ComboBox fx:id="comboBoxYetki" layoutX="467.0" layoutY="304.0" prefHeight="30.0" prefWidth="150.0" promptText="Satıcı" />
+      <ComboBox fx:id="comboBoxYetki" layoutX="467.0" layoutY="304.0" prefHeight="30.0" prefWidth="150.0" promptText="Yetki Seçiniz" />
       <HBox layoutX="314.0" layoutY="355.0" prefHeight="43.0" prefWidth="306.0">
          <children>
             <JFXButton onMouseClicked="#ekleBtnAction" prefHeight="43.0" prefWidth="96.0" style="-fx-background-color: gray; -fx-background-radius: 10;" text="Ekle" textFill="WHITE">

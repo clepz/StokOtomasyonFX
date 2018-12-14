@@ -25,6 +25,7 @@ public class Login {
     private double xOffset;
     private double yOffset;
    // private Stage stage;
+    public static String degiskenYetki;
 
     @FXML
     AnchorPane anaAnchor;
@@ -49,13 +50,7 @@ public class Login {
             mesaj.setText("Giriş bilgilerini kontrol ediniz.");
             return;
         }
-        String adres;
-        if(user.getRol().equals("ROLE_ADMIN"))
-            adres = "/fxml/adminEkran.fxml";
-        else if(user.getRol().equals("ROLE_USER"))
-            adres = "/fxml/anaEkran.fxml";
-        else if(user.getRol().equals("ROLE_KASIYER"))
-            adres = "/fxml/kasiyerEkran.fxml";
+
         Stage stage = (Stage)anaAnchor.getScene().getWindow();
         stage.close();
         load anaEkran = new load();

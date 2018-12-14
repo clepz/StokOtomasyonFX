@@ -1,9 +1,11 @@
 <component name="libraryTable">
   <library name="org.json">
     <CLASSES>
-      <root url="jar://C:/Program Files/org.json.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/javaFx/java-json.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Desktop/javaFx/java-json.jar!/" />
+    </SOURCES>
   </library>
 </component>

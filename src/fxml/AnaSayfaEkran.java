@@ -1,11 +1,16 @@
 package fxml;
 
 import com.jfoenix.controls.JFXButton;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import loader.load;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
@@ -27,6 +32,50 @@ public class AnaSayfaEkran {
 
     @FXML
     private JFXButton butonKullaniciİslemleri;
+
+    @FXML
+    private JFXButton butonKasaIslemleri;
+
+    @FXML
+    private Button butonCikis;
+
+    @FXML
+    private AnchorPane anaSayfaAnchor;
+
+    @FXML
+    private FontAwesomeIconView butonKapat;
+
+
+
+
+    @FXML
+
+    void initialize (){
+        if ((Login.user.getRol().equals("ROLE_ADMIN"))){
+            butonKasaIslemleri.setDisable(true);
+        }
+        else if ((Login.user.getRol().equals("ROLE_USER"))){
+            butonKasaIslemleri.setDisable(true);
+            butonKullaniciİslemleri.setDisable(true);
+            butonUrunEkle.setDisable(true);
+        }
+        else {
+            butonUrunEkle.setDisable(true);
+            butonKullaniciİslemleri.setDisable(true);
+            butonUrunListele.setDisable(true);
+            buttonSatisAnaliz.setDisable(true);
+
+
+        }
+
+
+
+
+    }
+
+
+
+
 
     @FXML
     void satisAction(ActionEvent event) {
@@ -97,4 +146,39 @@ public class AnaSayfaEkran {
 
 
     }
-}
+
+    @FXML
+    void butonKasaIslemleriAction(ActionEvent event) {
+        try {
+            fxml= FXMLLoader.load(getClass().getResource("/fxml/kasiyerEkran.fxml"));
+            degisenAnchor.getChildren().removeAll();
+            degisenAnchor.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    void butonCikisAction(ActionEvent event) {
+        Stage stage = (Stage)anaSayfaAnchor.getScene().getWindow();
+        stage.close();
+        load anaEkran = new load();
+        try {
+            anaEkran.loader("/fxml/login.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        }
+
+        @FXML
+        void kapatMouseClicked(MouseEvent event) {
+
+            System.exit(0);
+
+        }
+
+    }
+
+
+

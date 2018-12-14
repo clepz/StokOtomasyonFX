@@ -4,7 +4,6 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTreeTableView?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.TreeTableColumn?>
@@ -55,9 +54,6 @@
          </center>
          <top>
             <ButtonBar onMouseDragged="#topBarDragged" onMousePressed="#topBarPressed" prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: #7C7C7C;" BorderPane.alignment="CENTER">
-              <buttons>
-                  <FontAwesomeIconView fx:id="close" fill="#bf0000" glyphName="CLOSE" onMouseClicked="#closeClicked" size="25" />
-              </buttons>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
