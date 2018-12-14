@@ -51,7 +51,6 @@ public class HttpRequests {
         return Login.user;
     }
 
-
     public Urun urunAl(String barkod) {
         String params = "?barkod="+barkod;
         HttpURLConnection con = createRequest("/user/urun"+params,"GET");
@@ -70,7 +69,43 @@ public class HttpRequests {
         return urun;
     }
 
+    public boolean kullaniciEkle(int kullanici_id, String username, String password, String rol){
 
+        HttpURLConnection con = createRequest("/user/ekle", "POST");
+        con.setRequestProperty("Authorization", "Basic "+ Login.user.getEncoded());
+        con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+        con.setRequestProperty("Accept", "application/json");
+        String a = null;
+        con.setDoOutput(true);
+
+        try {
+            DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+            JSONObject user = new JSONObject();
+            user.put("username",username);
+            user.put("password",password);
+            if(rol.equals("Admin"))
+                user.put("rol","ROLE_ADMIN");
+            else if(rol.equals("Satıcı"))
+                user.put("rol","ROLE_USER");
+            else if(rol.equals("Kasiyer"))
+                user.put("rol","ROLE_KASIYER");
+            user.put("kullaniciId",kullanici_id);
+            wr.write(user.toString().getBytes());
+            wr.flush();
+            if(con.getResponseCode() != HttpURLConnection.HTTP_OK)
+                throw new RuntimeException("Http response code: "+con.getResponseCode());
+            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            a = in.readLine();
+            wr.close();
+            con.disconnect();
+            return Integer.valueOf(a) == 1;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
     public String al(){
         HttpURLConnection con = createRequest("/deneme","GET");

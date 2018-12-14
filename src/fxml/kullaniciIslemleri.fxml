@@ -38,17 +38,17 @@
             </HBox>
          </children>
       </Pane>
-      <TextField fx:id="TextFieldKullaniciadi" layoutX="314.0" layoutY="151.0" prefHeight="30.0" prefWidth="306.0" />
+      <TextField fx:id="textFieldKullaniciadi" layoutX="314.0" layoutY="151.0" prefHeight="30.0" prefWidth="306.0" />
       <Label layoutX="314.0" layoutY="122.0" prefHeight="21.0" prefWidth="107.0" text="Kullanıcı Adı" />
-      <TextField fx:id="TextFieldSifre" layoutX="314.0" layoutY="229.0" prefHeight="30.0" prefWidth="306.0" />
+      <TextField fx:id="textFieldSifre" layoutX="314.0" layoutY="229.0" prefHeight="30.0" prefWidth="306.0" />
       <Label layoutX="314.0" layoutY="200.0" prefHeight="21.0" prefWidth="107.0" text="Şifre" />
-      <TextField fx:id="TextFieldKullaniciID" layoutX="314.0" layoutY="304.0" prefHeight="30.0" prefWidth="142.0" />
+      <TextField fx:id="textFieldKullaniciID" layoutX="314.0" layoutY="304.0" prefHeight="30.0" prefWidth="142.0" />
       <Label layoutX="314.0" layoutY="275.0" prefHeight="21.0" prefWidth="107.0" text=" Kullanıcı ID" />
       <Label layoutX="467.0" layoutY="275.0" prefHeight="21.0" prefWidth="84.0" text="Yetki" />
-      <ComboBox fx:id="ComboBoxYetki" layoutX="467.0" layoutY="304.0" prefHeight="30.0" prefWidth="150.0" promptText="Satıcı" />
+      <ComboBox fx:id="comboBoxYetki" layoutX="467.0" layoutY="304.0" prefHeight="30.0" prefWidth="150.0" promptText="Satıcı" />
       <HBox layoutX="314.0" layoutY="355.0" prefHeight="43.0" prefWidth="306.0">
          <children>
-            <JFXButton prefHeight="43.0" prefWidth="96.0" style="-fx-background-color: gray; -fx-background-radius: 10;" text="Ekle" textFill="WHITE">
+            <JFXButton onMouseClicked="#ekleBtnAction" prefHeight="43.0" prefWidth="96.0" style="-fx-background-color: gray; -fx-background-radius: 10;" text="Ekle" textFill="WHITE">
                <HBox.margin>
                   <Insets left="5.0" />
                </HBox.margin>
@@ -56,7 +56,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton prefHeight="43.0" prefWidth="96.0" style="-fx-background-color: gray; -fx-background-radius: 10;" text="Güncelle" textFill="WHITE">
+            <JFXButton onMouseClicked="#guncelleBtnAction" prefHeight="43.0" prefWidth="96.0" style="-fx-background-color: gray; -fx-background-radius: 10;" text="Güncelle" textFill="WHITE">
                <HBox.margin>
                   <Insets left="5.0" />
                </HBox.margin>
@@ -64,7 +64,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton prefHeight="43.0" prefWidth="96.0" style="-fx-background-color: gray; -fx-background-radius: 10;" text="Sil" textFill="WHITE">
+            <JFXButton onMouseClicked="#silBtnAction" prefHeight="43.0" prefWidth="96.0" style="-fx-background-color: gray; -fx-background-radius: 10;" text="Sil" textFill="WHITE">
                <HBox.margin>
                   <Insets left="5.0" />
                </HBox.margin>
