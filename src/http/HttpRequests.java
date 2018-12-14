@@ -71,7 +71,7 @@ public class HttpRequests {
 
     public boolean kullaniciEkle(int kullanici_id, String username, String password, String rol){
 
-        HttpURLConnection con = createRequest("/user/ekle", "POST");
+        HttpURLConnection con = createRequest("/admin/ekle", "POST");
         con.setRequestProperty("Authorization", "Basic "+ Login.user.getEncoded());
         con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
         con.setRequestProperty("Accept", "application/json");
@@ -160,5 +160,40 @@ public class HttpRequests {
         }
 
         return a;
+    }
+
+    public void kullaniGuncelle(Integer id, String password, String yetki) {
+        HttpURLConnection con = createRequest("/admin/guncelle", "POST");
+        con.setRequestProperty("Authorization", "Basic "+ Login.user.getEncoded());
+        con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+        con.setRequestProperty("Accept", "application/json");
+        con.setDoOutput(true);
+        try {
+            DataOutputStream outputStream = new DataOutputStream(con.getOutputStream());
+            JSONObject user = new JSONObject();
+            user.put("kullaniciId",id);
+            user.put("password",password);
+            user.put("rol",yetkiDuzenle(yetki));
+            System.out.println(user.toString());
+            outputStream.write(user.toString().getBytes());
+            outputStream.flush();
+            if(con.getResponseCode() != HttpURLConnection.HTTP_OK)
+                throw new RuntimeException("Http response code: "+con.getResponseCode());
+            con.disconnect();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    private String yetkiDuzenle(String yetki){
+        if ((yetki.equals("Admin")))
+            return "ROLE_ADMIN";
+        else if(yetki.equals("Satıcı"))
+            return "ROLE_USER";
+        return "ROLE_KASIYER";
     }
 }

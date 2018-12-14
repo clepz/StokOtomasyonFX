@@ -49,6 +49,9 @@ public class KullaniciIslemleri {
     @FXML
     void guncelleBtnAction(MouseEvent event) {
 
+        HttpRequests requests = new HttpRequests();
+        requests.kullaniGuncelle(Integer.valueOf(textFieldKullaniciID.getText()),textFieldSifre.getText(),comboBoxYetki.getValue().toString());
+
     }
 
     @FXML
