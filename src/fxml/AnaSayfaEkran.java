@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import loader.load;
@@ -45,8 +46,8 @@ public class AnaSayfaEkran {
     @FXML
     private FontAwesomeIconView butonKapat;
 
-
-
+    @FXML
+    private Label labelKullaniciAdi;
 
     @FXML
 
@@ -67,15 +68,8 @@ public class AnaSayfaEkran {
 
 
         }
-
-
-
-
+        labelKullaniciAdi.setText(Login.user.getUsername());
     }
-
-
-
-
 
     @FXML
     void satisAction(ActionEvent event) {
@@ -169,7 +163,7 @@ public class AnaSayfaEkran {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        }
+    }
 
         @FXML
         void kapatMouseClicked(MouseEvent event) {

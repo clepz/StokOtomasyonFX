@@ -1,26 +1,20 @@
 package fxml;
 
 import com.jfoenix.controls.*;
-import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import http.HttpRequests;
-import javafx.application.Platform;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
+import model.Musteri;
 import model.SatisTablo;
-import com.sun.prism.impl.Disposer.Record;
 import model.Urun;
 
 public class anaEkran {
 
-    ObservableList<SatisTablo> list = FXCollections.observableArrayList();
+    ObservableList<SatisTablo> list;
 
     @FXML
     private JFXTextField barkod;
@@ -68,76 +62,62 @@ public class anaEkran {
     private JFXTextField musteriNotu;
 
     @FXML
-    private JFXTreeTableView<SatisTablo> tablo;
+    private TableView<SatisTablo> tablo;
 
     @FXML
-    private TreeTableColumn<SatisTablo, String> barkodColumn;
+    private TableColumn<?, ?> barkodColumn;
 
     @FXML
-    private TreeTableColumn<SatisTablo, String> urunAciklamaColumn;
+    private TableColumn<?, ?> urunAciklamaColumn;
 
     @FXML
-    private TreeTableColumn<SatisTablo, Integer> miktarColumn;
+    private TableColumn<SatisTablo, Spinner> miktarColumn;
 
     @FXML
-    private TreeTableColumn<SatisTablo, String> bolumColumn;
+    private TableColumn<?, ?> bolumColumn;
 
     @FXML
-    private TreeTableColumn<SatisTablo, String> fiyatColumn;
+    private TableColumn<?, ?> fiyatColumn;
 
     @FXML
-    private TreeTableColumn<SatisTablo, String> seriNoColumn;
+    private TableColumn<?, ?> seriNoColumn;
 
     @FXML
-    private TreeTableColumn<SatisTablo, String> islemColumn;
+    private TableColumn<SatisTablo, String> islemColumn;
 
 
     @FXML
     JFXComboBox<Character> cinsiyetComboBox;
 
     @FXML
-    JFXButton ekleBtn;
+    private Button btnSatisYap;
+
+    @FXML
+    private Button ekleBtn;
+
+    Urun urun;
 
     @FXML
     void initialize(){
+        list = FXCollections.observableArrayList();
         ekleBtn.setDisable(false);
-        cinsiyetComboBox.getItems().addAll('F','M');
-        barkodColumn.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<SatisTablo, String>, ObservableValue<String>>() {
-            @Override
-            public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<SatisTablo, String> param) {
-                return param.getValue().getValue().barkodProperty();
-            }
-        });
-        urunAciklamaColumn.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<SatisTablo, String>, ObservableValue<String>>() {
-            @Override
-            public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<SatisTablo, String> param) {
-                return param.getValue().getValue().urunAciklamasiProperty();
-            }
-        });bolumColumn.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<SatisTablo, String>, ObservableValue<String>>() {
-            @Override
-            public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<SatisTablo, String> param) {
-                return param.getValue().getValue().bolumNoProperty();
-            }
-        });seriNoColumn.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<SatisTablo, String>, ObservableValue<String>>() {
-            @Override
-            public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<SatisTablo, String> param) {
-                return param.getValue().getValue().seriNoProperty();
-            }
-        });fiyatColumn.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<SatisTablo, String>, ObservableValue<String>>() {
-            @Override
-            public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<SatisTablo, String> param) {
-                return param.getValue().getValue().fiyatProperty();
-            }
-        });
+        cinsiyetComboBox.getItems().addAll('E','K');
+        barkodColumn.setCellValueFactory(new PropertyValueFactory<>("barkod"));
+        urunAciklamaColumn.setCellValueFactory(new PropertyValueFactory<>("urunAciklamasi"));
+        bolumColumn.setCellValueFactory(new PropertyValueFactory<>("bolumNo"));
+        seriNoColumn.setCellValueFactory(new PropertyValueFactory<>("seriNo"));
+        fiyatColumn.setCellValueFactory(new PropertyValueFactory<>("fiyattablo"));
+        miktarColumn.setCellValueFactory(new PropertyValueFactory<SatisTablo, Spinner>("miktarSpinner"));
+        islemColumn.setCellValueFactory(new PropertyValueFactory<>("dummy"));
 
-        Callback<TreeTableColumn<SatisTablo, String>, TreeTableCell<SatisTablo, String>> cellFactory
+        Callback<TableColumn<SatisTablo, String>, TableCell<SatisTablo, String>> cellFactory
                 = //
-                new Callback<TreeTableColumn<SatisTablo, String>, TreeTableCell<SatisTablo, String>>() {
+                new Callback<TableColumn<SatisTablo, String>, TableCell<SatisTablo, String>>() {
                     @Override
-                    public TreeTableCell call(final TreeTableColumn<SatisTablo, String> param) {
-                        final TreeTableCell<SatisTablo, String> cell = new TreeTableCell<SatisTablo, String>() {
+                    public TableCell call(final TableColumn<SatisTablo, String> param) {
+                        final TableCell<SatisTablo, String> cell = new TableCell<SatisTablo, String>() {
 
-                            final JFXButton btn = new JFXButton("Sil");
+                            final Button btn = new Button("sil");
 
                             @Override
                             public void updateItem(String item, boolean empty) {
@@ -146,10 +126,8 @@ public class anaEkran {
                                     setGraphic(null);
                                     setText(null);
                                 } else {
-                                    btn.setButtonType(JFXButton.ButtonType.RAISED);
                                     btn.setOnAction(event -> {
-                                        //Button Action here
-                                        list.remove(this.getIndex());
+                                        list.remove(getIndex());
                                     });
                                     setGraphic(btn);
                                     setText(null);
@@ -159,79 +137,69 @@ public class anaEkran {
                         return cell;
                     }
                 };
-        Callback<TreeTableColumn<SatisTablo, Integer>, TreeTableCell<SatisTablo, Integer>> cellFactory2
-                = //
-                new Callback<TreeTableColumn<SatisTablo, Integer>, TreeTableCell<SatisTablo, Integer>>() {
-                    @Override
-                    public TreeTableCell call(final TreeTableColumn<SatisTablo, Integer> param) {
-                        final TreeTableCell<SatisTablo, Integer> cell = new TreeTableCell<SatisTablo, Integer>() {
-
-                            final Spinner<Integer> btn = new Spinner<>(1,10,1);
-
-                            @Override
-                            public void updateItem(Integer item, boolean empty) {
-                                super.updateItem(item, empty);
-                                if (empty) {
-                                    setGraphic(null);
-                                    setText(null);
-                                } else {
-                                    setGraphic(btn);
-                                    setText(null);
-                                    btn.valueProperty().addListener((observable, oldValue, newValue) -> list.get(this.getIndex()).setMiktar(newValue));
-                                }
-                            }
-                        };
-                        return cell;
-                    }
-                };
         islemColumn.setCellFactory(cellFactory);
-
-        miktarColumn.setCellFactory(cellFactory2);
-
-        final TreeItem<SatisTablo> root = new RecursiveTreeItem<>(list, RecursiveTreeObject::getChildren);
-        tablo.setRoot(root);
-        tablo.setShowRoot(false);
-
+        //miktarColumn.setCellFactory(cellFactory2);
+        tablo.setItems(list);
     }
 
     @FXML
     void barkodKeyReleased(){
         if(barkod.getText().length() == 16){
             HttpRequests requests = new HttpRequests();
-            Urun urun = requests.urunAl(barkod.getText());
-            if(urun != null){
+            urun = requests.urunAl(barkod.getText());
+            if(urun != null && urun.getAdet() != 0){
                 marka.setText(urun.getMarka());
                 model.setText(urun.getModel());
                 urunAciklamasi.setText(urun.getAciklama());
                 fiyat.setText(String.valueOf(urun.getFiyat()));
                 bolumNo.setText(urun.getBolum_no());
+                seriNo.setText(urun.getSeri_no());
                 bundle.setText(String.valueOf(urun.getBundleVarMi()));
                 ekleBtn.setDisable(false);
             } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR,"Ürün Bulunmamaktadır.", ButtonType.CLOSE);
+                Alert alert = new Alert(Alert.AlertType.ERROR,"Ürün Stoklarda Bulunmamaktadır.", ButtonType.CLOSE);
                 alert.show();
                 ekleBtn.setDisable(true);
             }
         }else if(barkod.getText().length()>16){
-            marka.setText("");
-            model.setText("");
-            urunAciklamasi.setText("");
-            fiyat.setText("");
-            bolumNo.setText("");
-            bundle.setText("");
+           urunTemizle();
         }
     }
 
     @FXML
     void ekleBtnClicked(){
+        list.add(new SatisTablo(urun.getBarkod(),urun.getSeri_no(),urun.getBolum_no(),urun.getFiyat(), urun.getAciklama(),urun.getAdet()));
+        urunTemizle();
+    }
 
-        list.add(new SatisTablo(barkod.getText(),seriNo.getText(),bolumNo.getText(),fiyat.getText(), urunAciklamasi.getText()));
-
+    private void urunTemizle() {
+        marka.setText("");
+        model.setText("");
+        urunAciklamasi.setText("");
+        fiyat.setText("");
+        bolumNo.setText("");
+        bundle.setText("");
+        seriNo.setText("");
+        ekleBtn.setDisable(true);
     }
 
     @FXML
-    void closeClicked(){
-        Platform.exit();
+    void satisYapClicked(){
+        list.forEach(u -> System.out.println(u.getBarkod() + " , miktar :" + u.getMiktar() + " , fiyat : "+u.getFiyattablo()));
+        Musteri musteri = new Musteri();
+        musteri.setAd(ad.getText());
+        musteri.setSoyad(soyad.getText());
+        musteri.setTc(tc.getText());
+        musteri.setCinsiyet(String.valueOf(cinsiyetComboBox.getValue()));
+        musteri.setTelefon(cepTelefonu.getText());
+        musteri.setEvTelefon(evTelefonu.getText());
+        musteri.setAdres(adres.getText());
+        musteri.setMusteriNotu(musteriNotu.getText());
+
+        HttpRequests requests = new HttpRequests();
+        while(!list.isEmpty()) {
+            requests.urunSat(list.get(0).getBarkod(), list.remove(0).getMiktar(),musteri);
+        }
     }
 
     @FXML

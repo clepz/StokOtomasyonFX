@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
@@ -19,36 +19,37 @@
                <children>
                   <AnchorPane prefHeight="431.0" prefWidth="933.0">
                      <children>
-                        <JFXTextField fx:id="ad" labelFloat="true" layoutX="29.0" layoutY="24.0" promptText="Ad" />
-                        <JFXTextField fx:id="soyad" labelFloat="true" layoutX="29.0" layoutY="82.0" promptText="Soyad" />
-                        <JFXTextField fx:id="adres" labelFloat="true" layoutX="27.0" layoutY="192.0" promptText="Adres" />
-                        <JFXTextField fx:id="cepTelefonu" labelFloat="true" layoutX="27.0" layoutY="249.0" promptText="Cep Telefonu" />
-                        <JFXTextField fx:id="evTelefonu" labelFloat="true" layoutX="27.0" layoutY="308.0" promptText="Ev Telefonu" />
-                        <JFXTextField fx:id="musteriNotu" labelFloat="true" layoutX="29.0" layoutY="362.0" promptText="Müşteri Notu" />
-                        <JFXTextField fx:id="barkod" labelFloat="true" layoutX="454.0" layoutY="24.0" onKeyReleased="#barkodKeyReleased" promptText="Barkod" />
-                        <JFXTextField fx:id="marka" editable="false" labelFloat="true" layoutX="454.0" layoutY="82.0" promptText="Marka" />
-                        <JFXTextField fx:id="model" editable="false" labelFloat="true" layoutX="454.0" layoutY="143.0" promptText="Model" />
-                        <JFXTextField fx:id="urunAciklamasi" editable="false" labelFloat="true" layoutX="454.0" layoutY="192.0" prefHeight="31.0" prefWidth="169.0" promptText="Ürün Açıklaması" />
-                        <JFXTextField fx:id="seriNo" editable="false" labelFloat="true" layoutX="454.0" layoutY="249.0" promptText="SeriNo" />
-                        <JFXTextField fx:id="fiyat" editable="false" labelFloat="true" layoutX="454.0" layoutY="362.0" promptText="Fiyat" />
-                        <JFXTextField fx:id="bolumNo" editable="false" labelFloat="true" layoutX="454.0" layoutY="308.0" promptText="Bölüm No" />
-                        <JFXButton fx:id="ekleBtn" layoutX="820.0" layoutY="375.0" onMouseClicked="#ekleBtnClicked" prefHeight="36.0" prefWidth="89.0" text="EKLE" />
-                        <JFXTextField fx:id="bundle" editable="false" labelFloat="true" layoutX="736.0" layoutY="308.0" promptText="Bundle" />
-                        <JFXTextField fx:id="tc" labelFloat="true" layoutX="27.0" layoutY="140.0" prefHeight="31.0" prefWidth="174.0" promptText="TC" />
-                        <JFXComboBox fx:id="cinsiyetComboBox" labelFloat="true" layoutX="222.0" layoutY="24.0" prefHeight="31.0" prefWidth="137.0" promptText="Cinsiyet" />
+                        <JFXTextField fx:id="ad" labelFloat="true" layoutX="29.0" layoutY="24.0" promptText="Ad" styleClass="root" stylesheets="@../css/style.css" />
+                        <JFXTextField fx:id="soyad" labelFloat="true" layoutX="29.0" layoutY="82.0" promptText="Soyad" styleClass="root" stylesheets="@../css/style.css" />
+                        <JFXTextField fx:id="adres" labelFloat="true" layoutX="27.0" layoutY="192.0" promptText="Adres" styleClass="root" stylesheets="@../css/style.css" />
+                        <JFXTextField fx:id="cepTelefonu" labelFloat="true" layoutX="27.0" layoutY="249.0" promptText="Cep Telefonu" styleClass="root" stylesheets="@../css/style.css" />
+                        <JFXTextField fx:id="evTelefonu" labelFloat="true" layoutX="27.0" layoutY="308.0" promptText="Ev Telefonu" styleClass="root" stylesheets="@../css/style.css" />
+                        <JFXTextField fx:id="musteriNotu" labelFloat="true" layoutX="29.0" layoutY="362.0" promptText="Müşteri Notu" styleClass="root" stylesheets="@../css/style.css" />
+                        <JFXTextField fx:id="barkod" labelFloat="true" layoutX="454.0" layoutY="24.0" onKeyReleased="#barkodKeyReleased" promptText="Barkod" styleClass="root" stylesheets="@../css/style.css" />
+                        <JFXTextField fx:id="marka" editable="false" labelFloat="true" layoutX="454.0" layoutY="82.0" promptText="Marka" styleClass="root" stylesheets="@../css/style.css" />
+                        <JFXTextField fx:id="model" editable="false" labelFloat="true" layoutX="454.0" layoutY="143.0" promptText="Model" styleClass="root" stylesheets="@../css/style.css" />
+                        <JFXTextField fx:id="urunAciklamasi" editable="false" labelFloat="true" layoutX="454.0" layoutY="192.0" prefHeight="31.0" prefWidth="169.0" promptText="Ürün Açıklaması" styleClass="root" stylesheets="@../css/style.css" />
+                        <JFXTextField fx:id="seriNo" editable="false" labelFloat="true" layoutX="454.0" layoutY="249.0" promptText="SeriNo" styleClass="root" stylesheets="@../css/style.css" />
+                        <JFXTextField fx:id="fiyat" editable="false" labelFloat="true" layoutX="454.0" layoutY="362.0" promptText="Fiyat" styleClass="root" stylesheets="@../css/style.css" />
+                        <JFXTextField fx:id="bolumNo" editable="false" labelFloat="true" layoutX="454.0" layoutY="308.0" promptText="Bölüm No" styleClass="root" stylesheets="@../css/style.css" />
+                        <JFXTextField fx:id="bundle" editable="false" labelFloat="true" layoutX="736.0" layoutY="308.0" promptText="Bundle" styleClass="root" stylesheets="@../css/style.css" />
+                        <JFXTextField fx:id="tc" labelFloat="true" layoutX="27.0" layoutY="140.0" prefHeight="31.0" prefWidth="174.0" promptText="TC" styleClass="root" stylesheets="@../css/style.css" />
+                        <JFXComboBox fx:id="cinsiyetComboBox" labelFloat="true" layoutX="222.0" layoutY="24.0" prefHeight="31.0" prefWidth="137.0" promptText="Cinsiyet" styleClass="root" stylesheets="@../css/style.css" />
+                        <Button fx:id="btnSatisYap" layoutX="251.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#satisYapClicked" text="Satış Yap" />
+                        <Button fx:id="ekleBtn" layoutX="736.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#ekleBtnClicked" text="Ürünü Ekle" />
                      </children>
                   </AnchorPane>
-                  <JFXTreeTableView fx:id="tablo" maxHeight="1.7976931348623157E308" prefHeight="193.0" prefWidth="1036.0" styleClass="tree-table" stylesheets="@../css/table.css">
-                     <columns>
-                        <TreeTableColumn fx:id="barkodColumn" editable="false" maxWidth="300.0" prefWidth="151.0" text="Barkod" />
-                        <TreeTableColumn fx:id="urunAciklamaColumn" editable="false" maxWidth="300.0" prefWidth="185.0" text="Ürün Açıklama" />
-                        <TreeTableColumn fx:id="miktarColumn" editable="false" maxWidth="300.0" prefWidth="105.0" text="Miktar" />
-                        <TreeTableColumn fx:id="bolumColumn" editable="false" maxWidth="300.0" prefWidth="124.0" text="Bölümü" />
-                        <TreeTableColumn fx:id="fiyatColumn" editable="false" maxWidth="414.0" prefWidth="111.0" text="Fiyatı" />
-                        <TreeTableColumn fx:id="seriNoColumn" editable="false" maxWidth="471.0" prefWidth="143.0" text="Seri No" />
-                        <TreeTableColumn fx:id="islemColumn" editable="false" maxWidth="228.0" prefWidth="113.0" text="İşlem" />
-                     </columns>
-                  </JFXTreeTableView>
+                  <TableView fx:id="tablo" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="barkodColumn" prefWidth="150.0" text="Barkod" />
+                      <TableColumn fx:id="urunAciklamaColumn" prefWidth="250.0" text="Ürün Açıklama" />
+                        <TableColumn fx:id="miktarColumn" prefWidth="75.0" text="Miktar" />
+                        <TableColumn fx:id="bolumColumn" prefWidth="100.0" text="Bölüm No" />
+                        <TableColumn fx:id="fiyatColumn" prefWidth="100.0" text="Fiyat" />
+                        <TableColumn fx:id="seriNoColumn" prefWidth="150.0" text="Seri No" />
+                        <TableColumn fx:id="islemColumn" prefWidth="107.0" text="İşlem" />
+                    </columns>
+                  </TableView>
                </children>
             </VBox>
          </center>

@@ -3,6 +3,7 @@ package fxml;
 import http.HttpRequests;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import model.User;
@@ -26,6 +27,9 @@ public class KullaniciIslemleri {
     private ComboBox<?> comboBoxYetki;
 
     @FXML
+    private Label labelHataMesaj;
+
+    @FXML
     void initialize(){
         List<String> yetkiler = new ArrayList();
         yetkiler.add("Admin");
@@ -40,9 +44,12 @@ public class KullaniciIslemleri {
         HttpRequests requests = new HttpRequests();
         if(requests.kullaniciEkle(Integer.valueOf(textFieldKullaniciID.getText()),textFieldKullaniciadi.getText(),
                 textFieldSifre.getText(),comboBoxYetki.getValue().toString()))
-            System.out.println("oldu");
+        {
+            labelHataMesaj.setText("Ekleme Başarılı.");
+        }
         else
-            System.out.println("olmadi.");
+            labelHataMesaj.setText("Ekleme Başarısız");
+        labelHataMesaj.setVisible(true);
 
     }
 
@@ -50,13 +57,27 @@ public class KullaniciIslemleri {
     void guncelleBtnAction(MouseEvent event) {
 
         HttpRequests requests = new HttpRequests();
-        requests.kullaniGuncelle(Integer.valueOf(textFieldKullaniciID.getText()),textFieldSifre.getText(),comboBoxYetki.getValue().toString());
+        try {
+            if (requests.kullaniGuncelle(Integer.valueOf(textFieldKullaniciID.getText()), textFieldSifre.getText(), comboBoxYetki.getValue().toString()))
+                labelHataMesaj.setText("Guncelleme Başarılı");
+            else
+                labelHataMesaj.setText("Güncelleme Başarısız. Bilgileri Kontrol Ediniz.");
+        }catch (NullPointerException e){
+            e.printStackTrace();
+            labelHataMesaj.setText("Boşlukları Doldurunuz");
+        }
+        labelHataMesaj.setVisible(true);
 
     }
 
     @FXML
     void silBtnAction(MouseEvent event) {
-
+        HttpRequests requests = new HttpRequests();
+        if(requests.kullaniciSil(Integer.valueOf(textFieldKullaniciID.getText())))
+            labelHataMesaj.setText("Silme Başarılı");
+        else
+            labelHataMesaj.setText("Silme Başarısız. Bilgileri Kontrol Ediniz.");
+        labelHataMesaj.setVisible(true);
     }
 
 }

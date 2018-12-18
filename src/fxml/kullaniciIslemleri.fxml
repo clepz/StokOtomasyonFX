@@ -74,5 +74,10 @@
             </JFXButton>
          </children>
       </HBox>
+      <Label fx:id="labelHataMesaj" alignment="CENTER" contentDisplay="RIGHT" layoutX="449.0" layoutY="417.0" textAlignment="CENTER" textFill="RED" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

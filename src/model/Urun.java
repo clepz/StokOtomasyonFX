@@ -1,6 +1,8 @@
 package model;
 
-public class Urun {
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+
+public class Urun  extends RecursiveTreeObject<Urun> {
 
     private String barkod;
 
@@ -14,11 +16,13 @@ public class Urun {
 
     private float fiyat;
 
+    private int adet;
+
     private int bundleVarMi;
 
     private String bolum_no;
 
-    public Urun(String barkod, String marka, String model, String aciklama, String seri_no, float fiyat, int bundleVarMi, String bolum_no) {
+    public Urun(String barkod, String marka, String model, String aciklama, String seri_no, float fiyat, int bundleVarMi, String bolum_no, int adet) {
         this.barkod = barkod;
         this.marka = marka;
         this.model = model;
@@ -27,6 +31,15 @@ public class Urun {
         this.fiyat = fiyat;
         this.bundleVarMi = bundleVarMi;
         this.bolum_no = bolum_no;
+        this.adet = adet;
+    }
+
+    public int getAdet() {
+        return adet;
+    }
+
+    public void setAdet(int adet) {
+        this.adet = adet;
     }
 
     public String getBarkod() {

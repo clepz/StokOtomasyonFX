@@ -2,6 +2,7 @@ package model;
 
 public class User {
 
+    private int kullaniciId;
     private String username;
     private String rol;
     private String encoded;
@@ -13,6 +14,14 @@ public class User {
     public User(String username, String rol) {
         this.username = username;
         this.rol = rol;
+    }
+
+    public int getKullaniciId() {
+        return kullaniciId;
+    }
+
+    public void setKullaniciId(int kullaniciId) {
+        this.kullaniciId = kullaniciId;
     }
 
     public String getUsername() {
