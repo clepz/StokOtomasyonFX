@@ -36,27 +36,19 @@
                   </Label>
                </children>
             </HBox>
-            <TextField layoutX="142.0" layoutY="28.0" prefHeight="27.0" prefWidth="190.0" style="-fx-background-radius: 10;" />
+            <TextField fx:id="textFieldKullaniciAdi" layoutX="142.0" layoutY="28.0" prefHeight="27.0" prefWidth="190.0" style="-fx-background-radius: 10;" />
             <Label layoutX="148.0" layoutY="6.0" prefHeight="17.0" prefWidth="98.0" text="Kullanıcı Adı" textFill="#757575">
-               <font>
-                  <Font name="System Bold" size="11.0" />
-               </font>
-            </Label>
-            <TextField layoutX="354.0" layoutY="28.0" prefHeight="27.0" prefWidth="190.0" style="-fx-background-radius: 10;" />
-            <Label layoutX="361.0" layoutY="6.0" prefHeight="17.0" prefWidth="98.0" text="Müşteri Tc" textFill="#757575">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <TableView layoutX="7.0" layoutY="79.0" prefHeight="587.0" prefWidth="933.0">
+      <TableView fx:id="tableAnalizTablo" layoutX="7.0" layoutY="79.0" prefHeight="587.0" prefWidth="933.0">
         <columns>
-          <TableColumn prefWidth="101.0" text="Kullanıcı Adı" />
-          <TableColumn prefWidth="63.0" text="Yetki" />
-            <TableColumn prefWidth="78.0" text="Ciro" />
-            <TableColumn prefWidth="102.0" text="Müşteri" />
-            <TableColumn prefWidth="401.0" text="Ürün Bilgisi" />
+          <TableColumn fx:id="columnKullaniciAdi" prefWidth="205.0" text="Kullanıcı Adı" />
+          <TableColumn fx:id="columnYetki" prefWidth="163.0" text="Yetki" />
+            <TableColumn fx:id="columnCiro" prefWidth="174.0" text="Ciro" />
         </columns>
       </TableView>
    </children>

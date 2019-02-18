@@ -39,6 +39,7 @@
                </children>
             </HBox>
             <FontAwesomeIconView fx:id="butonKapat" fill="#6b6b6b" glyphName="CLOSE" layoutX="1105.0" layoutY="17.0" onMouseClicked="#kapatMouseClicked" wrappingWidth="6.000000983476639" />
+            <FontAwesomeIconView fx:id="butonKapat1" fill="#6b6b6b" glyphName="MINUS" layoutX="1088.0" layoutY="17.0" onMouseClicked="#asaAlMouseClicked" wrappingWidth="6.000000983476639" />
          </children>
       </Pane>
       <AnchorPane layoutY="26.0" prefHeight="656.0" prefWidth="190.0">

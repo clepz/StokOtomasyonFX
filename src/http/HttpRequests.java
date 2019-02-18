@@ -1,12 +1,14 @@
 package http;
 
 import fxml.Login;
+import javafx.collections.ObservableList;
 import model.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONString;
 
+import javax.annotation.Generated;
 import java.io.*;
 import java.math.BigDecimal;
 import java.net.ConnectException;
@@ -391,7 +393,7 @@ public class HttpRequests {
             for(int i = 0 ; !arrayFatura.isNull(i); i++) {
                 Fatura fat = new Fatura(arrayFatura.getJSONObject(i).getInt("faturaId"),arrayFatura.getJSONObject(i).getString("musteriTc"),
                         BigDecimal.valueOf(arrayFatura.getJSONObject(i).getDouble("faturaTutari")).floatValue(),arrayFatura.getJSONObject(i).getString("faturaBilgisi"),
-                        arrayFatura.getJSONObject(i).getInt("kullaniciId"));
+                        arrayFatura.getJSONObject(i).getInt("kullaniciId"),arrayFatura.getJSONObject(i).getInt("adet"),arrayFatura.getJSONObject(i).getInt("faturaNo"));
                 fatura.add(fat);
             }
             JSONObject objmusteri= object.getJSONObject("musteri");
@@ -415,5 +417,125 @@ public class HttpRequests {
             e.printStackTrace();
         }
         return bilgiler;
+    }
+
+    public void kasiyerSatisOnay(String tc) {
+        HttpURLConnection con = createRequest("/kasiyer/urunsatisonay?tc="+tc, "GET");
+
+        try {
+            if(con.getResponseCode() != HttpURLConnection.HTTP_OK){
+                System.out.println("Satiş olmadı");
+                return;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<Musteri> musteriListeAl(){
+        HttpURLConnection con = createRequest("/user/musterilistele", "GET");
+        List<Musteri> liste = new ArrayList<>();
+        try {
+            if(con.getResponseCode()!= HttpURLConnection.HTTP_OK)
+                return null;
+            BufferedReader reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String a = reader.readLine();
+            con.disconnect();
+            JSONArray array = new JSONArray(a);
+            for(int i = 0 ; !array.isNull(i) ; i++){
+                Musteri musteri = new Musteri();
+                musteri.setMusteriNotu(array.getJSONObject(i).getString("musteri_notu"));
+                musteri.setAdres(array.getJSONObject(i).getString("adres"));
+                musteri.setAd(array.getJSONObject(i).getString("ad"));
+                musteri.setSoyad(array.getJSONObject(i).getString("soyad"));
+                musteri.setCinsiyet(array.getJSONObject(i).getString("cinsiyet"));
+                if(array.getJSONObject(i).get("ev_telefonu").getClass() == String.class)
+                    musteri.setEvTelefon(array.getJSONObject(i).getString("ev_telefonu"));
+                musteri.setTc(array.getJSONObject(i).getString("tc"));
+                musteri.setTelefon(array.getJSONObject(i).getString("telefon"));
+                liste.add(musteri);
+            }
+            return liste;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return liste;
+    }
+
+    public Musteri musteriBilgisiniAl(String tc) {
+
+        HttpURLConnection con = createRequest("/user/musterial?tc="+tc,"GET");
+        Musteri musteri = new Musteri();
+        try {
+            if(con.getResponseCode() != HttpURLConnection.HTTP_OK)
+                return null;
+            BufferedReader reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            JSONObject object = new JSONObject(reader.readLine());
+            musteri.setMusteriNotu(object.getString("musteri_notu"));
+            musteri.setAdres(object.getString("adres"));
+            musteri.setAd(object.getString("ad"));
+            musteri.setSoyad(object.getString("soyad"));
+            musteri.setCinsiyet(object.getString("cinsiyet"));
+            if(object.get("ev_telefonu").getClass() == String.class)
+                musteri.setEvTelefon(object.getString("ev_telefonu"));
+            musteri.setTc(object.getString("tc"));
+            musteri.setTelefon(object.getString("telefon"));
+            con.disconnect();
+            return musteri;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return musteri;
+    }
+
+    public List<Analiz> analizHerkesAl() {
+        HttpURLConnection con = createRequest("/admin/analizherkesal","GET");
+        List<Analiz> list = new ArrayList<>();
+        try {
+            if(con.getResponseCode() != HttpURLConnection.HTTP_OK)
+                return null;
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            JSONArray array = new JSONArray(reader.readLine());
+            System.out.println(reader.readLine());
+            for(int i = 0 ; !array.isNull(i); i++){
+                JSONObject object = array.getJSONObject(i);
+                Analiz analiz = new Analiz(object.getString("kullaniciAdi"),object.getDouble("ciro"),object.getString("rol"));
+                list.add(analiz);
+            }
+        return list;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public Analiz analizTekKullaniciAl(String adi){
+        String param = "?adi=" + adi;
+        HttpURLConnection con = createRequest("/admin/analiztekkisial"+param,"GET");
+
+        try {
+            if (con.getResponseCode() != HttpURLConnection.HTTP_OK)
+                return null;
+            BufferedReader reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            JSONObject object = new JSONObject(reader.readLine());
+            Analiz analiz= new Analiz(object.getString("kullaniciAdi"),object.getDouble("ciro"),object.getString("rol"));
+            con.disconnect();
+            return analiz;
+        }catch (IOException e){
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        return null;
     }
 }

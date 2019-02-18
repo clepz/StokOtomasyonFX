@@ -1,11 +1,13 @@
 package fxml;
 
 import com.jfoenix.controls.JFXButton;
+import com.sun.deploy.util.FXLoader;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
@@ -69,6 +71,12 @@ public class AnaSayfaEkran {
 
         }
         labelKullaniciAdi.setText(Login.user.getUsername());
+    }
+
+    @FXML
+    void asaAlMouseClicked(MouseEvent event) {
+        ((Stage)((FontAwesomeIconView)event.getSource()).getScene().getWindow()).setIconified(true);
+
     }
 
     @FXML

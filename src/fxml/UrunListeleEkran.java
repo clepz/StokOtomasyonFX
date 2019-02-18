@@ -64,13 +64,10 @@ public class UrunListeleEkran {
         tableViewTablo.getItems().clear();
         tableViewTablo.getItems().addAll(urunler);
 
-        comboBoxBolumNo.valueProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                tableViewTablo.getItems().clear();
-                tableViewTablo.getItems().addAll(urunler.stream().filter(u -> u.getBolum_no().equals(comboBoxBolumNo.getValue()))
-                        .collect(Collectors.toList()));
-            }
+        comboBoxBolumNo.valueProperty().addListener((observable, oldValue, newValue) -> {
+            tableViewTablo.getItems().clear();
+            tableViewTablo.getItems().addAll(urunler.stream().filter(u -> u.getBolum_no().equals(comboBoxBolumNo.getValue()))
+                    .collect(Collectors.toList()));
         });
     }
 

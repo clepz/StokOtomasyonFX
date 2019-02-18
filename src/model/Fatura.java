@@ -4,15 +4,17 @@ public class Fatura {
 
     private int faturaId;
 
-
     private String musteriTc;
-
 
     private float faturaTutari;
 
     private String faturaBilgisi;
 
     private int kullaniciId;
+
+    private int adet;
+
+    private int faturaNo;
 
     public int getFaturaId() {
         return faturaId;
@@ -46,6 +48,22 @@ public class Fatura {
         this.faturaBilgisi = faturaBilgisi;
     }
 
+    public int getAdet() {
+        return adet;
+    }
+
+    public void setAdet(int adet) {
+        this.adet = adet;
+    }
+
+    public int getFaturaNo() {
+        return faturaNo;
+    }
+
+    public void setFaturaNo(int faturaNo) {
+        this.faturaNo = faturaNo;
+    }
+
     public Fatura() {
     }
 
@@ -57,11 +75,13 @@ public class Fatura {
         this.kullaniciId = kullaniciId;
     }
 
-    public Fatura(int faturaId, String musteriTc, float faturaTutari, String faturaBilgisi, int kullaniciId) {
+    public Fatura(int faturaId, String musteriTc, float faturaTutari, String faturaBilgisi, int kullaniciId, int adet, int faturaNo) {
         this.faturaId = faturaId;
         this.musteriTc = musteriTc;
         this.faturaTutari = faturaTutari;
         this.faturaBilgisi = faturaBilgisi;
         this.kullaniciId = kullaniciId;
+        this.adet = adet;
+        this.faturaNo = faturaNo;
     }
 }

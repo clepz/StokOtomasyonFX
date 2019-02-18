@@ -37,23 +37,23 @@
                   </Label>
                </children>
             </HBox>
-            <TextField layoutX="124.0" layoutY="8.0" prefHeight="21.0" prefWidth="197.0" promptText="TC" />
-            <JFXButton layoutX="321.0" layoutY="8.0" prefHeight="25.0" prefWidth="51.0" style="-fx-background-color: gray;" text="Ara" textFill="WHITE">
+            <TextField fx:id="textFieldTc" layoutX="124.0" layoutY="8.0" onKeyReleased="#tcTextFieldReleased" prefHeight="21.0" prefWidth="197.0" promptText="TC" />
+            <JFXButton fx:id="btnAra" layoutX="321.0" layoutY="8.0" onAction="#araClicked" prefHeight="25.0" prefWidth="51.0" style="-fx-background-color: gray;" text="Ara" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
          </children>
       </Pane>
-      <TableView layoutY="41.0" prefHeight="625.0" prefWidth="933.0">
+      <TableView fx:id="tableViewTablo" layoutY="41.0" prefHeight="625.0" prefWidth="933.0">
         <columns>
-          <TableColumn prefWidth="105.0" text="TC" />
-            <TableColumn prefWidth="105.0" text="AD" />
-            <TableColumn prefWidth="105.0" text="SOYAD" />
-            <TableColumn prefWidth="160.0" text="ADRES" />
-            <TableColumn prefWidth="107.0" text="CİNSİYET" />
-            <TableColumn prefWidth="122.0" text="TELEFON" />
-            <TableColumn prefWidth="93.0" text="EV_TELEFON" />
+          <TableColumn fx:id="columnTc" prefWidth="105.0" text="TC" />
+            <TableColumn fx:id="columnAd" prefWidth="105.0" text="AD" />
+            <TableColumn fx:id="columnSoyad" prefWidth="105.0" text="SOYAD" />
+            <TableColumn fx:id="columnAdres" prefWidth="160.0" text="ADRES" />
+            <TableColumn fx:id="columnCinsiyet" prefWidth="107.0" text="CİNSİYET" />
+            <TableColumn fx:id="columnTelefon" prefWidth="122.0" text="TELEFON" />
+            <TableColumn fx:id="columnEvTelefon" prefWidth="138.0" text="EV_TELEFON" />
         </columns>
       </TableView>
    </children>
